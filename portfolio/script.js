@@ -25,6 +25,16 @@
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+  const siteHeader = document.querySelector('.site-header');
+
+  if (siteHeader && isCoarsePointer) {
+    const syncHeaderState = () => {
+      siteHeader.classList.toggle('is-scrolled', window.scrollY > 8);
+    };
+
+    syncHeaderState();
+    window.addEventListener('scroll', syncHeaderState, { passive: true });
+  }
 
   const rotators = document.querySelectorAll('.hero-rotator[data-rotate]');
   rotators.forEach((rotator) => {
@@ -159,15 +169,16 @@
         return;
       }
 
-      if (prefersReducedMotion || isCoarsePointer) {
+      if (prefersReducedMotion) {
         return;
       }
 
       event.preventDefault();
       document.body.classList.add('page-leaving');
+      const transitionDelay = isCoarsePointer ? 170 : 220;
       window.setTimeout(() => {
         window.location.href = href;
-      }, 220);
+      }, transitionDelay);
     });
   });
 
