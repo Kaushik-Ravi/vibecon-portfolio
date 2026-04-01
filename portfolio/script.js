@@ -10,6 +10,33 @@
   }
 
   const themeToggle = document.getElementById('themeToggle');
+
+  const syncThemeToggle = () => {
+    if (!themeToggle) {
+      return;
+    }
+
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    themeToggle.classList.add('theme-toggle');
+    themeToggle.setAttribute('type', 'button');
+    themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    themeToggle.innerHTML = `
+      <span class="theme-toggle-icons" aria-hidden="true">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v3M12 19v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M2 12h3M19 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"></path>
+        </svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3a7.2 7.2 0 0 0 9.79 9.79z"></path>
+        </svg>
+      </span>
+      <span class="theme-toggle-label">${isDark ? 'Dark' : 'Light'}</span>
+    `;
+  };
+
+  syncThemeToggle();
+
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       const isDark = root.getAttribute('data-theme') === 'dark';
@@ -20,6 +47,8 @@
         root.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
       }
+
+      syncThemeToggle();
     });
   }
 
@@ -30,10 +59,13 @@
   if (siteHeader && isCoarsePointer) {
     const syncHeaderState = () => {
       siteHeader.classList.toggle('is-scrolled', window.scrollY > 8);
+      siteHeader.style.setProperty('--mobile-header-glass-height', `${Math.ceil(siteHeader.getBoundingClientRect().bottom + 4)}px`);
     };
 
     syncHeaderState();
     window.addEventListener('scroll', syncHeaderState, { passive: true });
+    window.addEventListener('resize', syncHeaderState, { passive: true });
+    window.addEventListener('orientationchange', syncHeaderState, { passive: true });
   }
 
   const rotators = document.querySelectorAll('.hero-rotator[data-rotate]');

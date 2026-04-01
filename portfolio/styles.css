@@ -292,6 +292,44 @@ button.ghost-btn {
     background-color var(--dur-nav) var(--ease-nav), border-color var(--dur-nav) var(--ease-nav);
 }
 
+.theme-toggle {
+  gap: 8px;
+  min-width: 108px;
+  padding: 8px 12px;
+}
+
+.theme-toggle-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.theme-icon {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.85;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.44;
+  transform: scale(0.95);
+  transition: opacity var(--dur-nav) var(--ease-nav), transform var(--dur-nav) var(--ease-nav),
+    color var(--dur-nav) var(--ease-nav);
+}
+
+.theme-toggle-label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+:root:not([data-theme='dark']) .theme-icon-sun,
+:root[data-theme='dark'] .theme-icon-moon {
+  opacity: 1;
+  transform: scale(1);
+}
+
 .primary-btn {
   color: #ffffff;
   background: linear-gradient(130deg, var(--brand), #2c6cff);
@@ -1058,7 +1096,7 @@ body.cursor-active .cursor-dot {
   .site-header {
     flex-wrap: wrap;
     padding: 14px 0;
-    --mobile-header-glass-height: 108px;
+    row-gap: 10px;
   }
 
   .project-grid,
@@ -1075,21 +1113,50 @@ body.cursor-active .cursor-dot {
 
   .hero {
     padding: 54px 0 26px;
+    text-align: center;
+  }
+
+  .hero h1,
+  .hero-copy,
+  .hero .kicker {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero h1 {
+    max-width: 16ch;
+  }
+
+  .hero .kicker {
+    max-width: 32ch;
   }
 
   .hero-copy {
     font-size: 1.08rem;
+    max-width: 32ch;
   }
 
   .cta-row {
     width: 100%;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 
   .cta-row .primary-btn,
   .cta-row .ghost-btn {
     width: min(100%, 18rem);
     text-align: center;
+  }
+
+  .theme-toggle {
+    min-width: 76px;
+    padding: 8px 10px;
+    margin-left: auto;
+  }
+
+  .theme-toggle-label {
+    display: none;
   }
 
   .media-modal-inner {
@@ -1110,7 +1177,7 @@ body.cursor-active .cursor-dot {
     box-shadow: none;
     isolation: isolate;
     overflow: visible;
-    --mobile-header-glass-height: 78px;
+    --mobile-header-glass-height: 92px;
   }
 
   .site-header::before {
