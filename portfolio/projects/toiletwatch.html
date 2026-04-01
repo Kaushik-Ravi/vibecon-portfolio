@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toilet Watch Case Study | VibeCon Portfolio</title>
+    <meta
+      name="description"
+      content="Case study: Toilet Watch, a WhatsApp-first civic sanitation platform with AI triage, public mapping, and SLA escalation."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Toilet Watch Case Study" />
+    <meta
+      property="og:description"
+      content="WhatsApp-first sanitation reporting with AI triage, location enrichment, and agency escalation loops."
+    />
+    <meta property="og:image" content="../assets/screenshots/Toilet%20Watch/1.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (() => {
+        try {
+          // Theme boot: apply dark mode before first paint to avoid flicker between pages.
+          const storedTheme = localStorage.getItem("theme");
+          if (!storedTheme || storedTheme === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+        } catch {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Toilet Watch",
+        "description": "Citizen sanitation reporting with AI triage and escalation workflows.",
+        "url": "https://toilet-watch.vercel.app/",
+        "creator": {
+          "@type": "Person",
+          "name": "Kaushik Ravi"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="VibeCon Portfolio">
+        <span class="brand-dot"></span>
+        <span>Kaushik · Civic Tech</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../work.html" class="active">Work</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+      <button id="themeToggle" class="ghost-btn" aria-label="Toggle color theme">Theme</button>
+    </header>
+
+    <main id="main" class="case-layout reveal">
+      <aside class="case-side">
+        <a class="link-btn case-back-link" href="../work.html" aria-label="Back to all projects">Back to Work</a>
+        <p class="kicker">Case Study 04</p>
+        <h1>Toilet Watch</h1>
+        <p class="hero-copy">Citizen-powered sanitation intelligence with AI triage and accountability loops.</p>
+        <figure class="case-side-cover">
+          <img src="../assets/screenshots/Product Pics/Toilet Watch.jpg" alt="Toilet Watch case study hero image" loading="eager" fetchpriority="high" decoding="async" />
+        </figure>
+        <div class="stat-stack">
+          <p><strong>Role:</strong> Product architecture and full-stack delivery</p>
+          <p><strong>Core stack:</strong> FastAPI, Gemini, Supabase, WAHA, Leaflet, Resend</p>
+          <p><strong>Status:</strong> Public deployment</p>
+        </div>
+      </aside>
+
+      <article class="case-content">
+        <section class="detail-block">
+          <h2>Problem</h2>
+          <p>
+            Public toilet hygiene reporting is usually fragmented, slow, and difficult for
+            citizens to use consistently. Agencies often receive delayed information without
+            clear triage or resolution traceability.
+          </p>
+        </section>
+
+        <section class="detail-block">
+          <h2>Approach</h2>
+          <p>
+            Toilet Watch uses a zero-install WhatsApp flow for citizen reports, then applies
+            AI scoring and venue enrichment to route actionable alerts to responsible agencies.
+            A public map and SLA escalation loop make performance visible and hard to ignore.
+          </p>
+          <ul>
+            <li>WhatsApp-first report ingestion with structured context capture</li>
+            <li>AI severity scoring and issue labeling from on-site photos</li>
+            <li>Google Places API enrichment for shop name, website, and contact metadata</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Key Constraints and Fixes</h2>
+          <ul>
+            <li>Prototype uses WAHA for WhatsApp automation and is planned to migrate to Meta WhatsApp API</li>
+            <li>Photo-only reports lacked venue context until Places API enrichment was added</li>
+            <li>Time-window anti-spoof reporting controls are in progress and not fully deployed yet</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Key Technical Decisions</h2>
+          <ul class="spec-list">
+            <li>Used WAHA as a prototyping bridge to validate WhatsApp-first behavior quickly</li>
+            <li>Added Places API enrichment to convert image-only reports into actionable venue records</li>
+            <li>Retained explicit pending status for time-lock anti-spoof controls to avoid false readiness claims</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Media Gallery</h2>
+          <div class="media-grid">
+            <figure>
+              <img src="../assets/screenshots/Toilet Watch/1.webp" alt="Toilet Watch map dashboard with toilet markers" loading="lazy" />
+              <figcaption>Live dashboard with report locations</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/Toilet Watch/2.webp" alt="Toilet Watch detailed incident view" loading="lazy" />
+              <figcaption>Detailed report card with score and agency metadata</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="detail-block">
+          <h2>Outcomes</h2>
+          <ul>
+            <li>Lowered friction for citizens to report sanitation issues in seconds</li>
+            <li>Improved agency response workflow with direct email action controls</li>
+            <li>Introduced transparent public monitoring for sanitation performance</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Links</h2>
+          <div class="link-actions">
+            <a class="link-btn" href="https://toilet-watch.vercel.app/" target="_blank" rel="noopener noreferrer">Live App</a>
+            <a class="link-btn" href="https://github.com/Kaushik-Ravi" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>Prepared for VibeCon 2026 · Bangalore</p>
+      <a href="../work.html">All case studies</a>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
+
+

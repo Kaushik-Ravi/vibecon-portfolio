@@ -1,0 +1,67 @@
+Create one premium product story map architecture visual for VibeCon 2026.
+
+Tool context:
+- I will generate this in Nano Banana 2.
+- Use the provided references:
+  1) portfolio/assets/screenshots/Technical Architecture.jpg (layout and flow reference)
+  2) portfolio/assets/screenshots/Logos/White (no background).png
+  3) portfolio/assets/screenshots/Logos/Black (no background).png
+
+Brand block:
+- Title: Kaushik - Civic Tech Systems Architecture
+- Subtitle: Production AI products for climate intelligence and civic operations
+
+Visual direction (mandatory):
+- Premium product story map (not generic flowchart)
+- Editorial product aesthetic with clear narrative progression
+- Dark-first visual style, with an alternate light export
+- Blue + green accent language
+- Uniform iconography style across all nodes
+- No clutter, no decorative noise, no cartoon effects
+
+Required composition:
+1) Inputs and actors
+   - Citizens, field teams, climate groups, city agencies
+2) Product surfaces (five modules)
+   - Roots (TreeFolio)
+   - StreetLens
+   - Pune Tree Dashboard
+   - Toilet Watch
+   - EcoPath
+3) Intelligence layer
+   - SAM + WebXR measurement
+   - Gemini VLM for street analysis
+   - Gemini issue severity scoring
+4) Data and platform layer
+   - Supabase/PostGIS
+   - MongoDB + Redis
+   - OSM + NDVI/satellite overlays
+   - API services
+5) Outcomes layer
+   - Ward-level planning decisions
+   - Street audit prioritization
+   - Sanitation escalation and accountability
+   - Eco-routing and wellbeing guidance
+
+Three callouts (exact text):
+1) Smartphone-first evidence capture
+2) AI-assisted civic triage
+3) Ward-level climate intelligence
+
+Format and export:
+- Canvas: 16:9 landscape
+- Output 1: SVG (master)
+- Output 2: PNG (preview)
+- Ensure labels remain readable at 1200px width
+
+Typography and spacing rules:
+- Maximum 2 font weights for body and 2 for headings
+- Consistent spacing grid
+- Left-to-right flow with clear visual hierarchy
+- Keep copy concise; avoid paragraph-heavy boxes
+
+Final quality check before export:
+- All arrows and connectors are legible
+- No overlapping labels
+- Consistent icon stroke and corner radius
+- Strong contrast in dark mode and light mode

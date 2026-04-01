@@ -1,0 +1,30 @@
+flowchart LR
+    classDef user fill:#eaf0ff,stroke:#0950db,stroke-width:1px,color:#11131a;
+    classDef app fill:#e7fbf4,stroke:#149d78,stroke-width:1px,color:#11131a;
+    classDef data fill:#fff4e7,stroke:#bf6d1f,stroke-width:1px,color:#11131a;
+    classDef ai fill:#f2edff,stroke:#6e4ecb,stroke-width:1px,color:#11131a;
+
+    U[Citizens and City Teams]:::user --> W1[Roots Web App]:::app
+    U --> W2[StreetLens App]:::app
+    U --> W3[Tree Dashboard]:::app
+    U --> W4[Toilet Watch WhatsApp and Web]:::app
+    U --> W5[EcoPath App]:::app
+
+    W1 --> A1[SAM Segmentation and WebXR]:::ai
+    W2 --> A2[Gemini Vision Language Inference]:::ai
+    W4 --> A3[Gemini Severity Classification]:::ai
+
+    W1 --> D1[Supabase and PostGIS]:::data
+    W2 --> D2[MongoDB and Redis]:::data
+    W3 --> D1
+    W4 --> D1
+    W5 --> D1
+
+    D1 --> O1[Map Layers and Analytics]:::app
+    D2 --> O2[Scoring APIs and Reports]:::app
+    A1 --> O1
+    A2 --> O2
+    A3 --> O2
+
+    O1 --> R1[Policy and Planting Decisions]:::user
+    O2 --> R2[Issue Triage and Field Operations]:::user

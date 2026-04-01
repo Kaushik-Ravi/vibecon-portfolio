@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roots (TreeFolio) Case Study | VibeCon Portfolio</title>
+    <meta
+      name="description"
+      content="Case study: Roots (TreeFolio), an AI-powered urban forestry platform using SAM segmentation and community verification."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Roots (TreeFolio) Case Study" />
+    <meta
+      property="og:description"
+      content="AI-assisted urban tree measurement using SAM segmentation, WebXR distance capture, and community verification."
+    />
+    <meta property="og:image" content="../assets/screenshots/Roots/4.jpeg" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (() => {
+        try {
+          // Theme boot: apply dark mode before first paint to avoid flicker between pages.
+          const storedTheme = localStorage.getItem("theme");
+          if (!storedTheme || storedTheme === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+        } catch {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Roots (TreeFolio)",
+        "description": "AI-assisted urban tree measurement and verification workflow.",
+        "url": "https://tree-measurement-frontend.vercel.app/",
+        "creator": {
+          "@type": "Person",
+          "name": "Kaushik Ravi"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="VibeCon Portfolio">
+        <span class="brand-dot"></span>
+        <span>Kaushik · Civic Tech</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../work.html" class="active">Work</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+      <button id="themeToggle" class="ghost-btn" aria-label="Toggle color theme">Theme</button>
+    </header>
+
+    <main id="main" class="case-layout reveal">
+      <aside class="case-side">
+        <a class="link-btn case-back-link" href="../work.html" aria-label="Back to all projects">Back to Work</a>
+        <p class="kicker">Case Study 01</p>
+        <h1>Roots (TreeFolio)</h1>
+        <p class="hero-copy">AI-assisted tree measurement and community verification at city scale.</p>
+        <figure class="case-side-cover">
+          <img src="../assets/screenshots/Product Pics/Roots.png" alt="Roots case study hero image" loading="eager" fetchpriority="high" decoding="async" />
+        </figure>
+        <div class="stat-stack">
+          <p><strong>Role:</strong> End-to-end product and engineering</p>
+          <p><strong>Core stack:</strong> FastAPI, SAM, WebXR, Supabase, Leaflet</p>
+          <p><strong>Status:</strong> Production MVP</p>
+        </div>
+      </aside>
+
+      <article class="case-content">
+        <section class="detail-block">
+          <h2>Problem</h2>
+          <p>
+            Urban tree surveys are usually expensive and limited by specialist hardware,
+            making it difficult for communities and city teams to build reliable,
+            up-to-date inventories.
+          </p>
+        </section>
+
+        <section class="detail-block">
+          <h2>Approach</h2>
+          <p>
+            TreeFolio turns smartphone workflows into a structured measurement pipeline:
+            photo capture or live AR, SAM-based segmentation, species lookup,
+            allometric carbon estimation, and confidence scoring.
+          </p>
+          <ul>
+            <li>Multi-point segmentation refinement for better tree masks</li>
+            <li>Three-tier camera calibration to handle Android and iOS EXIF variance</li>
+            <li>Community consensus model to auto-verify contributed measurements</li>
+          </ul>
+          <div class="detail-meta">
+            <div class="meta-chip">
+              <p><strong>DBH MAE:</strong> 3.42 cm</p>
+            </div>
+            <div class="meta-chip">
+              <p><strong>Distance MAE:</strong> 0.08 m</p>
+            </div>
+            <div class="meta-chip">
+              <p><strong>Field time:</strong> under 2 minutes per tree</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="detail-block">
+          <h2>Key Constraints and Fixes</h2>
+          <ul>
+            <li>EXIF inconsistencies across phone models caused calibration drift in early testing</li>
+            <li>Physical reference-object workflows increased field friction and reduced completion rate</li>
+            <li>WebXR distance measurement replaced physical reference dependency for faster capture</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Key Technical Decisions</h2>
+          <ul class="spec-list">
+            <li>Adopted WebXR-assisted distance capture instead of physical reference markers</li>
+            <li>Implemented three-tier calibration fallback chain to support diverse phone camera behaviors</li>
+            <li>Kept community verification in workflow to reduce single-user measurement outliers</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Media Gallery</h2>
+          <div class="media-grid">
+            <figure>
+              <img src="../assets/screenshots/Roots/1.webp" alt="Roots mobile homepage" loading="lazy" />
+              <figcaption>Mobile homepage entry point</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/Roots/2.webp" alt="Roots AR measurement screen" loading="lazy" />
+              <figcaption>AR measurement workflow</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/Roots/3.webp" alt="Roots SAM refinement on mobile" loading="lazy" />
+              <figcaption>SAM refinement with user input</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/Roots/4.webp" alt="Roots final carbon results screen" loading="lazy" />
+              <figcaption>Final result with carbon estimation</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/Roots/5.webp" alt="Roots community verification interface" loading="lazy" />
+              <figcaption>Community verification workflow</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/Roots/6.webp" alt="Roots mission control desktop view" loading="lazy" />
+              <figcaption>Mission control operations view</figcaption>
+            </figure>
+          </div>
+          <div class="video-embed" data-video-id="HEREIbWHAPA" data-video-title="Roots demo video"></div>
+        </section>
+
+        <section class="detail-block">
+          <h2>Outcomes</h2>
+          <ul>
+            <li>Lower entry barrier for tree measurement and monitoring</li>
+            <li>Created a repeatable verification workflow for community data quality</li>
+            <li>Integrated field operations and analytics into one product surface</li>
+            <li>Total trees analyzed: 151</li>
+            <li>Total CO2 estimate from analyzed trees: 148,430.15 kg (148.43 t)</li>
+          </ul>
+          <p class="pending-note">
+            Validation note: CO2 estimation uses IPCC-recommended formulae. Larger benchmark
+            sets against professional tools are still being expanded.
+          </p>
+        </section>
+
+        <section class="detail-block">
+          <h2>Evidence Ledger</h2>
+          <table class="evidence-map">
+            <thead>
+              <tr>
+                <th>Claim</th>
+                <th>Evidence</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>DBH and distance accuracy are field-usable</td>
+                <td>DBH MAE 3.42 cm, distance MAE 0.08 m</td>
+                <td class="status-ok">Verified</td>
+              </tr>
+              <tr>
+                <td>Field workflow speed is practical</td>
+                <td>Under 2 minutes per tree in current runs</td>
+                <td class="status-ok">Verified</td>
+              </tr>
+              <tr>
+                <td>Broad camera compatibility</td>
+                <td>Three-tier calibration applied across Android and iOS testing</td>
+                <td class="status-ok">Verified</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="detail-block">
+          <h2>Learnings</h2>
+          <ul class="spec-list">
+            <li>Device heterogeneity is a core product risk in web-first field tools</li>
+            <li>Removing physical setup steps has outsized impact on contributor completion rates</li>
+            <li>Accuracy reporting must stay coupled to explicit benchmark methodology disclosure</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Links</h2>
+          <div class="link-actions">
+            <a class="link-btn" href="https://tree-measurement-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">Live App</a>
+            <a class="link-btn" href="https://youtu.be/HEREIbWHAPA" target="_blank" rel="noopener noreferrer">Demo Video</a>
+            <a class="link-btn" href="https://github.com/Kaushik-Ravi" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>Prepared for VibeCon 2026 · Bangalore</p>
+      <a href="../work.html">All case studies</a>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
+
+

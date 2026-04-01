@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pune Tree Dashboard Case Study | VibeCon Portfolio</title>
+    <meta
+      name="description"
+      content="Case study: Pune Tree Dashboard, a geospatial urban forestry intelligence system spanning 1.79M trees."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Pune Tree Dashboard Case Study" />
+    <meta
+      property="og:description"
+      content="Geospatial urban forestry intelligence platform with census records, NDVI overlays, and planning workflows."
+    />
+    <meta property="og:image" content="../assets/screenshots/Tree%20Intelligence%20Dashboard/1.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (() => {
+        try {
+          // Theme boot: apply dark mode before first paint to avoid flicker between pages.
+          const storedTheme = localStorage.getItem("theme");
+          if (!storedTheme || storedTheme === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+        } catch {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Pune Tree Dashboard",
+        "description": "Large-scale geospatial intelligence for urban forestry planning.",
+        "url": "https://pune-tree-dashboard-sample.vercel.app/",
+        "creator": {
+          "@type": "Person",
+          "name": "Kaushik Ravi"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="VibeCon Portfolio">
+        <span class="brand-dot"></span>
+        <span>Kaushik · Civic Tech</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../work.html" class="active">Work</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+      <button id="themeToggle" class="ghost-btn" aria-label="Toggle color theme">Theme</button>
+    </header>
+
+    <main id="main" class="case-layout reveal">
+      <aside class="case-side">
+        <a class="link-btn case-back-link" href="../work.html" aria-label="Back to all projects">Back to Work</a>
+        <p class="kicker">Case Study 03</p>
+        <h1>Pune Tree Dashboard</h1>
+        <p class="hero-copy">Large-scale geospatial intelligence for urban forestry planning and climate analysis.</p>
+        <figure class="case-side-cover">
+          <img src="../assets/screenshots/Product Pics/Tree Intelligence Dashboard.jpeg" alt="Tree Dashboard case study hero image" loading="eager" fetchpriority="high" decoding="async" />
+        </figure>
+        <div class="stat-stack">
+          <p><strong>Role:</strong> Platform architecture and geospatial product design</p>
+          <p><strong>Core stack:</strong> MapLibre, TypeScript, PostGIS, Supabase, satellite overlays</p>
+          <p><strong>Status:</strong> Production deployment</p>
+        </div>
+      </aside>
+
+      <article class="case-content">
+        <section class="detail-block">
+          <h2>Problem</h2>
+          <p>
+            Urban forestry decisions often rely on fragmented records and static reports,
+            making it difficult to prioritize interventions ward-by-ward.
+          </p>
+        </section>
+
+        <section class="detail-block">
+          <h2>Approach</h2>
+          <p>
+            This platform integrates tree census records, map interaction, filtering,
+            and environmental layers into an analysis workspace for planners and policy teams.
+          </p>
+          <ul>
+            <li>1.79M tree records with multi-dimensional filters</li>
+            <li>Ward-level analysis and planning support</li>
+            <li>Temperature and canopy context for climate-focused decisions</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Key Constraints and Fixes</h2>
+          <ul>
+            <li>Climate action teams requested explicit street-tree filtering not available in the initial dataset</li>
+            <li>Street-tree layer added using OpenStreetMap road buffers and tree-within-buffer extraction</li>
+            <li>Heavy query latency reduced using local storage cache, Redis, and frontend state optimization</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Key Technical Decisions</h2>
+          <ul class="spec-list">
+            <li>Preserved census-scale source table and layered analytical filters on top</li>
+            <li>Added OSM-derived spatial buffering pipeline to create street-tree focused views</li>
+            <li>Combined client cache, Redis cache, and frontend state strategy to reduce repeated heavy queries</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Media Gallery</h2>
+          <div class="media-grid">
+            <figure>
+              <img src="../assets/screenshots/Tree Intelligence Dashboard/1.webp" alt="Tree dashboard map with filters" loading="lazy" />
+              <figcaption>Map viewport with active filters</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/Tree Intelligence Dashboard/2.webp" alt="Tree dashboard ward ranking panel" loading="lazy" />
+              <figcaption>Ward comparison and ranking panel</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/Tree Intelligence Dashboard/3.webp" alt="Tree dashboard climate layer" loading="lazy" />
+              <figcaption>Climate and temperature overlay view</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/Tree Intelligence Dashboard/4.webp" alt="Tree dashboard planting advisor" loading="lazy" />
+              <figcaption>Planting recommendation workflow</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/Tree Intelligence Dashboard/5.webp" alt="Tree dashboard data insights" loading="lazy" />
+              <figcaption>Data insight and metric summary</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/Tree Intelligence Dashboard/6.png" alt="Tree dashboard mobile view" loading="lazy" />
+              <figcaption>Mobile viewport experience</figcaption>
+            </figure>
+          </div>
+          <div class="video-embed" data-video-id="RDzJPSGQCBg" data-video-title="Pune Tree Dashboard demo video"></div>
+        </section>
+
+        <section class="detail-block">
+          <h2>Outcomes</h2>
+          <ul>
+            <li>Unified large-scale tree intelligence in one operational interface</li>
+            <li>Improved discoverability of ward-level green infrastructure signals</li>
+            <li>Built foundation for data-backed planting and policy planning</li>
+            <li>Primary tree inventory scale: 1.79M records from Pune tree census datasets</li>
+          </ul>
+          <p class="pending-note">
+            Validation note: overlays include NDVI and tree-cover change context from 2019-2025,
+            with satellite basemaps and census cross-check workflows.
+          </p>
+        </section>
+
+        <section class="detail-block">
+          <h2>Evidence Ledger</h2>
+          <table class="evidence-map">
+            <thead>
+              <tr>
+                <th>Claim</th>
+                <th>Evidence</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Platform covers city-scale inventory</td>
+                <td>1.79M records sourced from Pune tree census datasets</td>
+                <td class="status-ok">Verified</td>
+              </tr>
+              <tr>
+                <td>Street-tree analysis requested by users is supported</td>
+                <td>OSM road-buffer extraction layer added to filter system</td>
+                <td class="status-ok">Verified</td>
+              </tr>
+              <tr>
+                <td>Climate trend context is integrated</td>
+                <td>NDVI and tree-cover overlays across 2019-2025</td>
+                <td class="status-ok">Verified</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="detail-block">
+          <h2>Learnings</h2>
+          <ul class="spec-list">
+            <li>User-requested filters can redefine product value faster than backend feature expansion</li>
+            <li>Caching is not optional at this scale; it is foundational to usable map analytics</li>
+            <li>Cross-validating satellite overlays with census context improves planner trust</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Links</h2>
+          <div class="link-actions">
+            <a class="link-btn" href="https://pune-tree-dashboard-sample.vercel.app/" target="_blank" rel="noopener noreferrer">Live App</a>
+            <a class="link-btn" href="https://youtu.be/RDzJPSGQCBg" target="_blank" rel="noopener noreferrer">Demo Video</a>
+            <a class="link-btn" href="https://github.com/Kaushik-Ravi" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>Prepared for VibeCon 2026 · Bangalore</p>
+      <a href="../work.html">All case studies</a>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
+
+

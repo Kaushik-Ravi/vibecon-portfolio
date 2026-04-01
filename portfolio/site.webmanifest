@@ -1,0 +1,21 @@
+{
+  "name": "VibeCon Portfolio",
+  "short_name": "VibeCon",
+  "description": "AI for cities, climate intelligence, and civic technology case studies.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#f6f7f3",
+  "theme_color": "#0950db",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "16x16 32x32 48x48 64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

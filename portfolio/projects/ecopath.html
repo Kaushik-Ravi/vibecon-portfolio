@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meditation App (EcoPath) Case Study | VibeCon Portfolio</title>
+    <meta
+      name="description"
+      content="Case study: EcoPath Meditation App, an eco-route and guided-walk experience for mindful urban mobility."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="EcoPath Meditation Case Study" />
+    <meta
+      property="og:description"
+      content="Eco-routing and guided meditation experience for calmer and greener city movement."
+    />
+    <meta property="og:image" content="../assets/screenshots/Meditation/1.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (() => {
+        try {
+          // Theme boot: apply dark mode before first paint to avoid flicker between pages.
+          const storedTheme = localStorage.getItem("theme");
+          if (!storedTheme || storedTheme === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+        } catch {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "EcoPath Meditation App",
+        "description": "Eco-routing and guided calm-walk experience for urban movement.",
+        "url": "https://myecopath.vercel.app/",
+        "creator": {
+          "@type": "Person",
+          "name": "Kaushik Ravi"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="VibeCon Portfolio">
+        <span class="brand-dot"></span>
+        <span>Kaushik · Civic Tech</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../work.html" class="active">Work</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+      <button id="themeToggle" class="ghost-btn" aria-label="Toggle color theme">Theme</button>
+    </header>
+
+    <main id="main" class="case-layout reveal">
+      <aside class="case-side">
+        <a class="link-btn case-back-link" href="../work.html" aria-label="Back to all projects">Back to Work</a>
+        <p class="kicker">Case Study 05</p>
+        <h1>Meditation App (EcoPath)</h1>
+        <p class="hero-copy">Eco-routing and guided calm-walk product for healthier urban movement.</p>
+        <figure class="case-side-cover">
+          <img src="../assets/screenshots/Product Pics/Meditation.jpeg" alt="EcoPath case study hero image" loading="eager" fetchpriority="high" decoding="async" />
+        </figure>
+        <div class="stat-stack">
+          <p><strong>Role:</strong> Product design and full-stack implementation</p>
+          <p><strong>Core stack:</strong> Flask, React, PostGIS, routing APIs, TTS pipeline</p>
+          <p><strong>Status:</strong> Public web deployment</p>
+        </div>
+      </aside>
+
+      <article class="case-content">
+        <section class="detail-block">
+          <h2>Problem</h2>
+          <p>
+            Urban mobility tools usually optimize only for speed, while users also need
+            lower-emission paths and mentally restorative walking experiences.
+          </p>
+        </section>
+
+        <section class="detail-block">
+          <h2>Approach</h2>
+          <p>
+            EcoPath combines route intelligence with guided meditation prompts, allowing
+            users to select calmer and greener path options instead of purely shortest-time routing.
+          </p>
+          <ul>
+            <li>Eco-aware path recommendations</li>
+            <li>Audio-guided walk experiences</li>
+            <li>Nature-context prompts for mindful city movement</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Key Constraints and Fixes</h2>
+          <ul>
+            <li>Current release is desktop-first; mobile app adaptation is in progress</li>
+            <li>Routing quality dropped where footpath geometry was missing or incomplete</li>
+            <li>Tree-cluster narration was curated to avoid overlapping or clumsy guidance moments</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Key Technical Decisions</h2>
+          <ul class="spec-list">
+            <li>Released desktop MVP first to validate route-plus-meditation behavior before mobile app build</li>
+            <li>Introduced fallback routing priority when footpath data was unavailable</li>
+            <li>Curated tree narration sequencing to reduce overlapping cues in dense clusters</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Media Gallery</h2>
+          <div class="media-grid">
+            <figure>
+              <img src="../assets/screenshots/Meditation/1.webp" alt="EcoPath eco route options" loading="lazy" />
+              <figcaption>Eco route option selection</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/Meditation/2.webp" alt="EcoPath route metrics screen" loading="lazy" />
+              <figcaption>Route-level metrics and comparison</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/Meditation/3.webp" alt="EcoPath meditation guide interface" loading="lazy" />
+              <figcaption>Meditation guidance interface</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/Meditation/4.webp" alt="EcoPath session summary" loading="lazy" />
+              <figcaption>Session summary and impact snapshot</figcaption>
+            </figure>
+          </div>
+          <div class="video-embed" data-video-id="zwn3infLCT8" data-video-title="EcoPath demo video"></div>
+        </section>
+
+        <section class="detail-block">
+          <h2>Outcomes</h2>
+          <ul>
+            <li>Introduced a differentiated wellness-plus-mobility product direction</li>
+            <li>Combined technical routing logic with human-centered experience design</li>
+            <li>Created a deployable concept for city-level eco-walk use cases</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Links</h2>
+          <div class="link-actions">
+            <a class="link-btn" href="https://myecopath.vercel.app/" target="_blank" rel="noopener noreferrer">Live App</a>
+            <a class="link-btn" href="https://youtu.be/zwn3infLCT8?si=7Z6BlIHT9Inp_r9h" target="_blank" rel="noopener noreferrer">Demo Video</a>
+            <a class="link-btn" href="https://github.com/Kaushik-Ravi" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>Prepared for VibeCon 2026 · Bangalore</p>
+      <a href="../work.html">All case studies</a>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
+
+

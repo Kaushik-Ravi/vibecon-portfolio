@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | VibeCon Portfolio</title>
+    <meta name="description" content="About the builder behind this AI and civic technology portfolio." />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="About | VibeCon Portfolio" />
+    <meta
+      property="og:description"
+      content="Builder profile and live project links for VibeCon 2026."
+    />
+    <meta property="og:image" content="assets/screenshots/IndiaFoss.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (() => {
+        try {
+          // Theme boot: apply dark mode before first paint to avoid flicker between pages.
+          const storedTheme = localStorage.getItem("theme");
+          if (!storedTheme || storedTheme === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+        } catch {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "name": "Kaushik Ravi - Portfolio Profile",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Kaushik Ravi",
+          "url": "https://github.com/Kaushik-Ravi"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="VibeCon Portfolio">
+        <span class="brand-dot"></span>
+        <span>Kaushik · Civic Tech</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+        </ul>
+      </nav>
+      <button id="themeToggle" class="ghost-btn" aria-label="Toggle color theme">Theme</button>
+    </header>
+
+    <main id="main" class="section page-top reveal about-stack">
+      <p class="kicker">About</p>
+      <h1>Builder Profile</h1>
+      <div class="profile-wrap">
+        <img class="profile-photo" src="assets/screenshots/Personal Photo (bg removed).png" alt="Kaushik profile photo" loading="lazy" />
+        <div class="profile-intro">
+          <h2>Kaushik Ravi</h2>
+          <p>
+            I build AI products for civic impact and climate intelligence.
+            This portfolio focuses on shipped work, real constraints, and practical outcomes.
+          </p>
+        </div>
+      </div>
+
+      <section class="detail-block">
+        <h2>Portfolio Positioning</h2>
+        <p>
+          This portfolio emphasizes shipped systems, quantified outcomes, and clear
+          product reasoning. It avoids inflated claims and keeps unresolved metrics
+          explicitly marked as pending verification.
+        </p>
+      </section>
+
+      <section class="detail-block">
+        <h2>Live Project Links</h2>
+        <div class="link-actions">
+          <a class="link-btn" href="https://pune-tree-dashboard-sample.vercel.app/" target="_blank" rel="noopener noreferrer">Tree Dashboard</a>
+          <a class="link-btn" href="https://tree-measurement-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">Roots</a>
+          <a class="link-btn" href="https://mystreetlens.vercel.app/" target="_blank" rel="noopener noreferrer">StreetLens</a>
+          <a class="link-btn" href="https://toilet-watch.vercel.app/" target="_blank" rel="noopener noreferrer">Toilet Watch</a>
+          <a class="link-btn" href="https://myecopath.vercel.app/" target="_blank" rel="noopener noreferrer">EcoPath</a>
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <h2>Public Presentation</h2>
+        <div class="link-actions">
+          <a class="link-btn" href="https://www.youtube.com/watch?v=hYl3yrLU9-k" target="_blank" rel="noopener noreferrer">IndiaFOSS Talk</a>
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <h2>Code Access Note</h2>
+        <p>
+          Some repositories are private. Public code references are available through the
+          main GitHub profile.
+        </p>
+        <div class="link-actions">
+          <a class="link-btn" href="https://github.com/Kaushik-Ravi" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+          <a class="link-btn" href="https://www.linkedin.com/in/kaushik2002/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Prepared for VibeCon 2026 · Bangalore</p>
+      <a href="work.html">Back to Work</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work | VibeCon Portfolio</title>
+    <meta name="description" content="Case studies in applied AI for infrastructure, climate, and civic systems." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Work | VibeCon Portfolio" />
+    <meta
+      property="og:description"
+      content="Flagship case studies in applied AI for civic systems, urban forestry, and infrastructure operations."
+    />
+    <meta property="og:image" content="assets/screenshots/IndiaFoss.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (() => {
+        try {
+          // Theme boot: apply dark mode before first paint to avoid flicker between pages.
+          const storedTheme = localStorage.getItem("theme");
+          if (!storedTheme || storedTheme === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+        } catch {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "VibeCon Portfolio Work",
+        "description": "Case study index for AI and civic technology projects"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="VibeCon Portfolio">
+        <span class="brand-dot"></span>
+        <span>Kaushik · Civic Tech</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work.html" class="active">Work</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <button id="themeToggle" class="ghost-btn" aria-label="Toggle color theme">Theme</button>
+    </header>
+
+    <main id="main" class="section page-top reveal">
+      <p class="kicker">Case Studies</p>
+      <h1>Projects</h1>
+      <p class="hero-copy">
+        The focus is depth over volume: each project highlights real implementation,
+        core technical decisions, and measurable impact.
+      </p>
+
+      <div class="project-grid work-grid">
+        <article class="project-card">
+          <figure class="project-cover">
+            <img src="assets/screenshots/Roots/6.png" alt="Roots product preview" loading="lazy" />
+          </figure>
+          <p class="project-tag">Flagship</p>
+          <h2>Roots (TreeFolio)</h2>
+          <p>Smartphone-based AI tree measurement and community verification platform.</p>
+          <a href="projects/treefolio.html">Read case study</a>
+        </article>
+
+        <article class="project-card">
+          <figure class="project-cover">
+            <img src="assets/screenshots/StreetLens/5.png" alt="StreetLens product preview" loading="lazy" />
+          </figure>
+          <p class="project-tag">Flagship</p>
+          <h2>StreetLens VLM</h2>
+          <p>Remote infrastructure audits using vision-language models and map imagery.</p>
+          <a href="projects/streetlens.html">Read case study</a>
+        </article>
+
+        <article class="project-card">
+          <figure class="project-cover">
+            <img src="assets/screenshots/Tree Intelligence Dashboard/6.png" alt="Tree dashboard product preview" loading="lazy" />
+          </figure>
+          <p class="project-tag">Flagship</p>
+          <h2>Pune Tree Dashboard</h2>
+          <p>1.79M-tree geospatial intelligence platform with planning and climate layers.</p>
+          <a href="projects/tree-dashboard.html">Read case study</a>
+        </article>
+
+        <article class="project-card">
+          <figure class="project-cover">
+            <img src="assets/screenshots/Toilet Watch/2.png" alt="Toilet Watch product preview" loading="lazy" />
+          </figure>
+          <p class="project-tag">Flagship</p>
+          <h2>Toilet Watch</h2>
+          <p>Citizen-powered sanitation intelligence with AI triage and agency escalation loops.</p>
+          <a href="projects/toiletwatch.html">Read case study</a>
+        </article>
+
+        <article class="project-card">
+          <figure class="project-cover">
+            <img src="assets/screenshots/Meditation/4.png" alt="EcoPath product preview" loading="lazy" />
+          </figure>
+          <p class="project-tag">Additional</p>
+          <h2>Meditation App (EcoPath)</h2>
+          <p>Eco-route and mindful walking product that blends mobility and wellness UX.</p>
+          <a href="projects/ecopath.html">Read case study</a>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>Prepared for VibeCon 2026 · Bangalore</p>
+      <a href="about.html">Contact</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StreetLens Case Study | VibeCon Portfolio</title>
+    <meta
+      name="description"
+      content="Case study: StreetLens VLM, a remote infrastructure auditing system using Gemini and street imagery."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="StreetLens VLM Case Study" />
+    <meta
+      property="og:description"
+      content="Remote street auditing using Gemini VLM, geospatial sampling, and weighted quality scoring."
+    />
+    <meta property="og:image" content="../assets/screenshots/StreetLens/2.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (() => {
+        try {
+          // Theme boot: apply dark mode before first paint to avoid flicker between pages.
+          const storedTheme = localStorage.getItem("theme");
+          if (!storedTheme || storedTheme === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+        } catch {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "StreetLens VLM",
+        "description": "Remote infrastructure auditing with vision-language models.",
+        "url": "https://mystreetlens.vercel.app/",
+        "creator": {
+          "@type": "Person",
+          "name": "Kaushik Ravi"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="VibeCon Portfolio">
+        <span class="brand-dot"></span>
+        <span>Kaushik · Civic Tech</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../work.html" class="active">Work</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+      <button id="themeToggle" class="ghost-btn" aria-label="Toggle color theme">Theme</button>
+    </header>
+
+    <main id="main" class="case-layout reveal">
+      <aside class="case-side">
+        <a class="link-btn case-back-link" href="../work.html" aria-label="Back to all projects">Back to Work</a>
+        <p class="kicker">Case Study 02</p>
+        <h1>StreetLens VLM</h1>
+        <p class="hero-copy">Remote, AI-first street infrastructure auditing for faster civic decisions.</p>
+        <figure class="case-side-cover">
+          <img src="../assets/screenshots/Product Pics/StreetLens.jpg" alt="StreetLens case study hero image" loading="eager" fetchpriority="high" decoding="async" />
+        </figure>
+        <div class="stat-stack">
+          <p><strong>Role:</strong> Product architecture and AI integration</p>
+          <p><strong>Core stack:</strong> FastAPI, Gemini VLM, MongoDB, Redis, Celery</p>
+          <p><strong>Status:</strong> Production web app and API</p>
+        </div>
+      </aside>
+
+      <article class="case-content">
+        <section class="detail-block">
+          <h2>Problem</h2>
+          <p>
+            Traditional street audits rely on expensive and slow field surveys,
+            which limits repeatability and coverage for fast-moving urban operations.
+          </p>
+        </section>
+
+        <section class="detail-block">
+          <h2>Approach</h2>
+          <p>
+            StreetLens combines street imagery, vision-language analysis, and a weighted
+            scoring model to detect infrastructure quality signals and prioritize attention.
+          </p>
+          <ul>
+            <li>Detection and classification across 14+ street elements</li>
+            <li>Spatial deduplication to avoid inflated counts</li>
+            <li>Weighted quality score for operational prioritization</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Key Constraints and Fixes</h2>
+          <ul>
+            <li>Initial sampling used only front-back headings and failed on curved roads</li>
+            <li>Sampling logic was upgraded to align heading capture with road curvature</li>
+            <li>Curve-adaptive capture improved street coverage consistency on non-linear segments</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Key Technical Decisions</h2>
+          <ul class="spec-list">
+            <li>Moved from static heading pairs to curve-adaptive sampling logic</li>
+            <li>Retained weighted scoring model for operational prioritization instead of binary pass/fail</li>
+            <li>Maintained API-first architecture for downstream integration flexibility</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Media Gallery</h2>
+          <div class="media-grid">
+            <figure>
+              <img src="../assets/screenshots/StreetLens/1.webp" alt="StreetLens street selection interface" loading="lazy" />
+              <figcaption>Street selection and analysis setup</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/StreetLens/2.png" alt="StreetLens score dashboard" loading="lazy" />
+              <figcaption>Street quality score breakdown</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/StreetLens/3.png" alt="StreetLens findings summary" loading="lazy" />
+              <figcaption>Infrastructure findings summary</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/StreetLens/4.webp" alt="StreetLens AI verification screen" loading="lazy" />
+              <figcaption>AI findings verification flow</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screenshots/StreetLens/5.png" alt="StreetLens historical street analysis page" loading="lazy" />
+              <figcaption>Street history and comparisons</figcaption>
+            </figure>
+          </div>
+          <div class="video-embed" data-video-id="jKQz5PUMyCo" data-video-title="StreetLens demo video"></div>
+        </section>
+
+        <section class="detail-block">
+          <h2>Outcomes</h2>
+          <ul>
+            <li>Substantially reduced audit effort using remote analysis workflow</li>
+            <li>Enabled repeatable scoring and easier multi-street comparisons</li>
+            <li>Delivered API-oriented architecture for external integration</li>
+          </ul>
+        </section>
+
+        <section class="detail-block">
+          <h2>Links</h2>
+          <div class="link-actions">
+            <a class="link-btn" href="https://mystreetlens.vercel.app/" target="_blank" rel="noopener noreferrer">Live App</a>
+            <a class="link-btn" href="https://youtu.be/jKQz5PUMyCo" target="_blank" rel="noopener noreferrer">Demo Video</a>
+            <a class="link-btn" href="https://github.com/Kaushik-Ravi" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>Prepared for VibeCon 2026 · Bangalore</p>
+      <a href="../work.html">All case studies</a>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
+
+
