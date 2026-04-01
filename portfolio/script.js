@@ -79,17 +79,44 @@
     }
 
     rotator.innerHTML = words.map((word, i) => `<span class="hero-rotator-word${i === 0 ? ' active' : ''}">${word}</span>`).join('');
-    if (prefersReducedMotion || isCoarsePointer || words.length < 2) {
+    if (prefersReducedMotion || words.length < 2) {
       return;
     }
 
     const nodes = rotator.querySelectorAll('.hero-rotator-word');
     let idx = 0;
-    window.setInterval(() => {
+    const rotateInterval = isCoarsePointer ? 3400 : 2800;
+    let intervalId = null;
+
+    const tick = () => {
       nodes[idx].classList.remove('active');
       idx = (idx + 1) % nodes.length;
       nodes[idx].classList.add('active');
-    }, 2800);
+    };
+
+    const startRotation = () => {
+      if (intervalId !== null) {
+        return;
+      }
+      intervalId = window.setInterval(tick, rotateInterval);
+    };
+
+    const stopRotation = () => {
+      if (intervalId === null) {
+        return;
+      }
+      window.clearInterval(intervalId);
+      intervalId = null;
+    };
+
+    startRotation();
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopRotation();
+      } else {
+        startRotation();
+      }
+    });
   });
 
   const revealItems = document.querySelectorAll('.reveal');
